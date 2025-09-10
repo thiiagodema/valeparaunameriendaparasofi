@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Vale por una merienda</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ffe5ec, #fddde6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: white;
+      padding: 40px 60px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #e63973;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2rem;
+      color: #444;
+      margin-top: 0;
+    }
+    .heart {
+      font-size: 3rem;
+      color: #e63973;
+      margin: 20px 0;
+      transition: transform 0.3s;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: white;
+      background-color: #e63973;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    button:hover {
+      background-color: #d62860;
+      transform: scale(1.1);
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #e63973;
+      display: none;
+      animation: fadeIn 0.8s forwards;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Vale por una merienda</h1>
+    <p>Con amor, para Sofi ♥</p>
+    <div class="heart">❤️</div>
+    <button onclick="canjear()">Canjear</button>
+    <div class="message" id="message">¡Merienda confirmada! Nos vemos para disfrutarla juntos, confirmar fecha y hora. 😄</div>
+  </div>
+
+  <script>
+    function canjear() {
+      const message = document.getElementById('message');
+      message.style.display = 'block';
+      const heart = document.querySelector('.heart');
+      heart.style.transform = 'scale(1.5)';
+      setTimeout(() => { heart.style.transform = 'scale(1)'; }, 500);
+    }
+  </script>
+</body>
+</html>
